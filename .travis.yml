@@ -1,0 +1,14 @@
+---
+sudo: false
+language: ruby
+cache: bundler
+rbenv: 2.5.3
+before_install: gem install bundler -v 2.0.1
+install:
+  - bundle install
+jobs:
+  include:
+  - stage: test
+    script:
+    - bundle exec rubocop
+    - bundle exec rake test

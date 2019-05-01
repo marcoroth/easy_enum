@@ -1,0 +1,26 @@
+Documentation:
+  Enabled: false
+
+Performance/InefficientHashSearch:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 200
+
+Metrics/LineLength:
+  Max: 180
+
+Metrics/BlockLength:
+  Max: 100
+
+Metrics/ClassLength:
+  Max: 300
+
+Metrics/MethodLength:
+  Max: 100
+
+Metrics/CyclomaticComplexity:
+  Max: 20
+
+Metrics/PerceivedComplexity:
+  Max: 20
