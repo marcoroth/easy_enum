@@ -35,6 +35,23 @@ module SimpleEnum
       assert_equal 2, blue.value
     end
 
+    def test_checking
+      color = Color.green
+      assert color.green?
+      assert !color.red?
+      assert !color.blue?
+
+      color = Color.red
+      assert !color.green?
+      assert color.red?
+      assert !color.blue?
+
+      color = Color.blue
+      assert !color.green?
+      assert !color.red?
+      assert color.blue?
+    end
+
     def test_exploring
       assert_equal ({ green: 0, red: 1, blue: 2 }), Color.members
 

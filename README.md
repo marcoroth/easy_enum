@@ -77,6 +77,17 @@ blue.value
 
 ```
 
+### Checking
+
+```ruby
+color = Color.green
+
+color.green? # => true
+color.red? # => false
+color.blue? # => false
+
+```
+
 ### Exploring the Enum
 
 ```ruby
