@@ -21,15 +21,13 @@ Or install it yourself as:
 ## Basic Usage
 
 ```ruby
-include EasyEnum
-
-class Color < EasyEnum
+class Color < EasyEnum::EasyEnum
   easy_enum(green: 0, red: 1, blue: 2)
 end
 
 # or
 
-class Color < EasyEnum
+class Color < EasyEnum::EasyEnum
   self.easy_enum = {
     green: 0,
     red: 1,
