@@ -1,17 +1,17 @@
-module SimpleEnum
-  class SimpleEnum
+module EasyEnum
+  class EasyEnum
     attr_reader :value
 
     class << self
-      attr_writer :simple_enum
+      attr_writer :easy_enum
     end
 
     def initialize(value)
       self.value = value
     end
 
-    def self.simple_enum(simple_enum = {})
-      @simple_enum ||= simple_enum
+    def self.easy_enum(easy_enum = {})
+      @easy_enum ||= easy_enum
     end
 
     def value=(value)
@@ -31,7 +31,7 @@ module SimpleEnum
     end
 
     def key
-      self.class.simple_enum.each do |key, val|
+      self.class.easy_enum.each do |key, val|
         return key if value == val
       end
 
@@ -39,15 +39,15 @@ module SimpleEnum
     end
 
     def self.members
-      simple_enum
+      easy_enum
     end
 
     def self.keys
-      simple_enum.keys
+      easy_enum.keys
     end
 
     def self.values
-      simple_enum.values
+      easy_enum.values
     end
 
     def self.key(key)
@@ -72,7 +72,7 @@ module SimpleEnum
     end
 
     def self.size
-      simple_enum.count
+      easy_enum.count
     end
 
     def ==(other)
@@ -86,7 +86,7 @@ module SimpleEnum
     end
 
     def method_missing(method, *args) # rubocop:disable Style/MissingRespondToMissing
-      self.class.simple_enum.each do |key, val|
+      self.class.easy_enum.each do |key, val|
         return val == value if method == "#{key}?".to_sym
       end
 

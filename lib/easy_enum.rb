@@ -1,7 +1,7 @@
-require 'simple_enum/version'
-require 'simple_enum/simple_enum'
+require 'easy_enum/version'
+require 'easy_enum/easy_enum'
 
-module SimpleEnum
+module EasyEnum
   class ValueNotInEnum < StandardError; end
   class KeyNotInEnum < StandardError; end
 end

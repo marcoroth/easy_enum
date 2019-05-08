@@ -1,11 +1,11 @@
 require 'test_helper'
 
-module SimpleEnum
-  class Color < SimpleEnum
-    simple_enum(green: 0, red: 1, blue: 2)
+module EasyEnum
+  class Color < EasyEnum
+    easy_enum(green: 0, red: 1, blue: 2)
   end
 
-  class SimpleEnumTest < Minitest::Test
+  class EasyEnumTest < Minitest::Test
     def test_creation
       assert_equal :green, Color.green.key
       assert_equal :red, Color.red.key

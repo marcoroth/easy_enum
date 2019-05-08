@@ -1,16 +1,16 @@
 lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
-require 'simple_enum/version'
+require 'easy_enum/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'simple_enum'
-  spec.version       = SimpleEnum::VERSION
+  spec.name          = 'easy_enum'
+  spec.version       = EasyEnum::VERSION
   spec.authors       = ['Marco Roth']
   spec.email         = ['marco.roth@intergga.ch']
-  spec.summary       = 'Easy to use enums in Ruby'
-  spec.description   = 'Easy to use enums in Ruby'
-  spec.homepage      = 'https://github.com/marcoroth/simple_enum'
+  spec.summary       = 'Turn any Ruby class in an easy to use enum'
+  spec.description   = 'Turn any Ruby class in an easy to use enum'
+  spec.homepage      = 'https://github.com/marcoroth/easy_enum'
   spec.license       = 'MIT'
   spec.files         = Dir['{lib}/**/*', 'LICENSE.txt', 'README.md']
   spec.bindir        = 'exe'

@@ -1,13 +1,13 @@
-# SimpleEnum
+# EasyEnum
 
-Easy to use enums in Ruby.
+Turn any Ruby class in an easy to use enum.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'simple_enum'
+gem 'easy_enum'
 ```
 
 And then execute:
@@ -16,21 +16,21 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install simple_enum
+    $ gem install easy_enum
 
 ## Basic Usage
 
 ```ruby
-include SimpleEnum
+include EasyEnum
 
-class Color < SimpleEnum
-  simple_enum(green: 0, red: 1, blue: 2)
+class Color < EasyEnum
+  easy_enum(green: 0, red: 1, blue: 2)
 end
 
 # or
 
-class Color < SimpleEnum
-  self.simple_enum = {
+class Color < EasyEnum
+  self.easy_enum = {
     green: 0,
     red: 1,
     blue: 2
@@ -39,7 +39,7 @@ end
 
 ```
 
-### Creation
+### Getting an Instance
 
 ```ruby
 Color.green
@@ -77,7 +77,7 @@ blue.value
 
 ```
 
-### Checking
+### Check the value of your instance
 
 ```ruby
 color = Color.green
@@ -125,7 +125,7 @@ green == Color.red # => false
 ```
 
 
-### Redefining
+### Redefining the value of your instance
 
 ```ruby
 color = Color.green
@@ -141,10 +141,10 @@ color.value  # => 2
 color.key # => :blue
 
 color.key = :yellow
-# => raises SimpleEnum::KeyNotInEnum
+# => raises EasyEnum::KeyNotInEnum
 
 color.value = 3
-# => raises SimpleEnum::ValueNotInEnum
+# => raises EasyEnum::ValueNotInEnum
 
 ```
 
@@ -157,7 +157,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/marcoroth/simple_enum.
+Bug reports and pull requests are welcome on GitHub at https://github.com/marcoroth/easy_enum.
 
 ## License
 
