@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'easy_enum/version'
 require 'easy_enum/easy_enum'
 

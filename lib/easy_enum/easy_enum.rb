@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module EasyEnum
   class EasyEnum
     attr_reader :value
