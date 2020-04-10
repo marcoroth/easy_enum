@@ -4,17 +4,20 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        ruby: [ '2.5', '2.6', '2.7' ]
+    name: Build Ruby ${{ matrix.ruby }}
     steps:
     - uses: actions/checkout@v1
-    - name: Set up Ruby 2.6
+    - name: Set up Ruby ${{ matrix.ruby }}
       uses: actions/setup-ruby@v1
       with:
-        ruby-version: 2.6.x
+        ruby-version: ${{ matrix.ruby }}
     - name: Build and test with Rake
       run: |
         gem install bundler
         bundle install --jobs 4 --retry 3
         bundle exec rake
+        bundle exec rubocop
