@@ -130,5 +130,12 @@ module EasyEnum
       assert color.respond_to?(:red?)
       assert !color.respond_to?(:yellow?)
     end
+
+    def test_self_respond_to
+      assert Color.respond_to?(:green)
+      assert Color.respond_to?(:blue)
+      assert Color.respond_to?(:red)
+      assert !Color.respond_to?(:yellow)
+    end
   end
 end
