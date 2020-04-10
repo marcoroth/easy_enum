@@ -87,7 +87,7 @@ module EasyEnum
       end
     end
 
-    def method_missing(method, *args) # rubocop:disable Style/MissingRespondToMissing
+    def method_missing(method, *args)
       self.class.easy_enum.each do |key, val|
         return val == value if method == "#{key}?".to_sym
       end
@@ -95,8 +95,20 @@ module EasyEnum
       super
     end
 
-    def self.method_missing(method, *args) # rubocop:disable Style/MissingRespondToMissing
+    def respond_to_missing?(method, *)
+      return true if self.class.easy_enum.keys.map { |key| "#{key}?".to_sym }.include?(method)
+
+      super
+    end
+
+    def self.method_missing(method, *args)
       return key(method) if keys.include?(method)
+
+      super
+    end
+
+    def self.respond_to_missing?(method, *)
+      return true if keys.include?(method)
 
       super
     end
