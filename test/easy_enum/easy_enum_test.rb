@@ -121,5 +121,14 @@ module EasyEnum
         color.value = 3
       end
     end
+
+    def test_respond_to
+      color = Color.green
+
+      assert color.respond_to?(:green?)
+      assert color.respond_to?(:blue?)
+      assert color.respond_to?(:red?)
+      assert !color.respond_to?(:yellow?)
+    end
   end
 end
