@@ -1,13 +1,16 @@
-Documentation:
+Style/Documentation:
   Enabled: false
 
-Performance/InefficientHashSearch:
-  Enabled: false
+Style/HashEachMethods:
+  Enabled: true
 
-Metrics/AbcSize:
-  Max: 200
+Style/HashTransformKeys:
+  Enabled: true
 
-Metrics/LineLength:
+Style/HashTransformValues:
+  Enabled: true
+
+Layout/LineLength:
   Max: 180
 
 Metrics/BlockLength:
@@ -24,3 +27,12 @@ Metrics/CyclomaticComplexity:
 
 Metrics/PerceivedComplexity:
   Max: 20
+
+Metrics/AbcSize:
+  Max: 200
+
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
