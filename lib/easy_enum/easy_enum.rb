@@ -78,9 +78,10 @@ module EasyEnum
     end
 
     def ==(other)
-      if other.is_a? self.class
+      case other
+      when self.class
         other.key == key
-      elsif other.is_a? Symbol
+      when Symbol
         other == key
       else
         other == value
