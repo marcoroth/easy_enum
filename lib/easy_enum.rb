@@ -5,5 +5,6 @@ require 'easy_enum/easy_enum'
 
 module EasyEnum
   class ValueNotInEnum < StandardError; end
+
   class KeyNotInEnum < StandardError; end
 end
